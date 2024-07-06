@@ -1,1 +1,434 @@
+ .header-conteiner {
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  
+} 
 
+.header{
+   
+      
+        border-bottom: 1px solid rgba(12, 12, 12, 0.1);
+        /* border-width: 100%; */
+}
+
+.network-link{
+    height: 100%;
+    width: 100%;
+}
+
+.network-item{
+    padding: 0;
+}
+
+.mob-network-link{
+    height: 100%;
+    width: 100%;
+}
+
+.network-link>.network-svg{
+         transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+ .network-link:hover>.network-svg,
+ .network-link:focus>.network-svg{
+    fill: #3350e9;
+ }
+
+.mob-network-link>.mob-network-svg{
+    fill: #fbfbfb;
+}
+
+.mob-network-link>.mob-network-svg{
+         transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+  .mob-network-link:hover>.mob-network-svg,
+ .mob-network-link:focus>.mob-network-svg{
+    fill: #3350e9;
+ }
+
+
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.logo-web {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #0c0c0c;
+    text-decoration: none;
+}
+
+.open-menu-btn{
+    width: 34px;
+    height: 34px;
+}
+
+.logo-web:hover {
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-web:focus {
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-nav {
+    display: none;
+}
+
+.open-menu-btn {
+    width: 34px;
+    height:34px;
+
+
+
+}
+
+@media (min-width:768px){
+    .open-menu-btn{
+        width: 40px;
+        height: 40px;
+    }
+
+     .open-menu-svg{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+.open-menu-btn {
+  padding: 0;
+    line-height: 0;
+  background-color: transparent;
+    cursor: pointer;
+border: none;
+}
+
+
+
+.network {
+    display: none;
+}
+
+.open-menu-svg {
+    fill: #0c0c0c;
+}
+
+@media screen and (min-width: 768px) {
+    .network {
+        display: none;
+    }
+
+    .logo-web {
+        font-size: 20px;
+    }
+        .open-menu-btn {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+
+@media screen and (min-width: 1280px) {
+    .logo-web {
+        margin-right: 203px;
+    }
+
+    .link-nav {
+        display: flex;
+        gap: 40px;
+    }
+
+    .link {
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #0c0c0c;
+        text-decoration: none;
+    }
+
+    .link > .link-studio,
+.link {
+    position: relative;
+    color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover .link-studio::after,
+.link:focus .link-studio::after,
+.link:hover::after,
+.link:focus::after {
+    content: '';
+    width: 6px;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    height: 6px;
+    background-color: #404bbf;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+    .link-nav .link:hover {
+        color: #404bbf;
+    }
+
+    .link-nav .link:focus {
+        color: #404bbf;
+    }
+
+    .network {
+        display: block;
+    }
+
+    .network-list {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .network-item {
+        border: 1px solid rgba(12, 12, 12, 0.1);
+        border-radius: 10px;
+        
+        width: 36px;
+        height: 36px;
+    }
+
+    .network-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+
+    .open-menu-btn {
+        display: none;
+    }
+}
+
+.open-menu-svg{
+    fill: #0c0c0c;
+    stroke: #0c0c0c;
+}
+
+/* --------------mob menu-------------------- */
+
+
+/* Общие стили для мобильного меню */
+.mob-menu {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    background: linear-gradient(to bottom, rgba(0, 0, 0,0.92), rgba(0, 0, 0, 0.92)), url(../img/header/header-mob.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+/* Стили для мобильного меню на устройствах с высоким разрешением */
+@media (min-resolution: 192dpi) and (max-width: 767px) {
+    .mob-menu {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url(../img/header/header-mob.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Стили для мобильного меню на устройствах с шириной экрана до 767px */
+@media (max-width: 767px) {
+    .mob-menu {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url(../img/header/header-mob.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Стили для мобильного меню на устройствах с шириной экрана от 768px до 1280px */
+@media (min-width: 768px) and (max-width: 1280px) {
+    .mob-menu {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url(../img/header/header-tab.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Стили для мобильного меню на устройствах с высоким разрешением и шириной экрана от 768px до 1280px */
+@media (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1280px) {
+    .mob-menu {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url(../img/header/header-tab@2x.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+
+
+.close-menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 186px; 
+    width: 34px;
+    height: 34px;
+   background-color: transparent;
+    border: none;
+}
+
+
+
+.mob-network-close{
+
+stroke: #fbfbfb;
+width: 100%;
+height: 100%;
+}
+
+.mob-link-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mob-link {
+    position: relative;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #fbfbfb;
+}
+
+.mob-link:hover {
+    color: #3350e9;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-link:focus {
+    color: #3350e9;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+    .mob-link > .mob-link-studio,
+.mob-link {
+    position: relative;
+  
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-link:hover .mob-link-studio::after,
+.mob-link:focus .mob-link-studio::after,
+.mob-link:hover::after,
+.mob-link:focus::after {
+    content: '';
+    width: 6px;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    height: 6px;
+    background-color: #404bbf;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.mob-link-studio {}
+
+.mob-network {margin-top: auto;}
+
+.mob-network-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.mob-network-item {}
+
+.mob-network-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(251, 251, 251, 0.1);
+    border-radius: 10px;
+    padding: 8px;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    .mob-menu {
+        width: 330px;
+    }
+
+    .close-menu-btn {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 244px; 
+    }
+
+        .mob-network-close {
+        width: 100%;
+        height: 100%;
+        }
+}
+
+@media screen and (min-width: 1280px) {
+    .mob-menu {
+         display: none; 
+    }
+}
