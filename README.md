@@ -1,2 +1,1 @@
-# project-smart-cats
-This is my first joint project with a watch site
+This is our first team project.
